@@ -1,0 +1,154 @@
+.mid-side-button {
+  border: 0;
+  display: block;
+  display: transparent;
+  padding: 15px;
+  margin: 10px auto;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.mid-side-button:hover {
+  background-color:  rgb(197, 197, 193);
+}
+
+
+span[selected=true] {
+  background-color: rgb(197, 197, 193);
+}
+.board-icon {
+  vertical-align: middle;
+  background-image: url(../icons/board.svg);
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+.settings-icon {
+  vertical-align: middle;
+  background-image: url(../icons/settings.svg);
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+.notimplemented-icon {
+  vertical-align: middle;
+  background-image: url(../icons/forbidden.svg);
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+
+
+
+
+
+
+#topbar {
+  height: 65px;
+  width: 85;
+  padding: 20px;
+  padding-left: 40px;
+  text-align: left;
+}
+.topbar-title {
+  font-size: 28px;
+}
+
+
+.boards {
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow: auto;
+}
+
+.column {
+    flex: 0 0 auto;
+    width: 22.5%;
+    min-height: 40vh;
+    box-sizing: border-box;
+    border-radius: 1px;
+    margin-left: 2%;
+    background-color:  #f4f5f7;
+}
+
+.column:hover {
+    border: 1px solid #4786FF;
+    box-shadow: 0px 1px 6px #4786FF;
+  }
+  
+  .column-title {
+      margin: 5% 0px 0px 5%;
+      font-family: 'Lato', Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      font-size: large;
+  }
+
+
+
+.tasks {
+    min-height: 40vh;
+  }
+  .task {
+    list-style-type: none;
+    position: relative;
+    background-color: white;
+    border: 1px solid #EBEDF0;
+    box-sizing: border-box;
+    border-radius: 5%;
+    width: 100%;
+    height: 50px;
+    
+  }
+  
+  .task:nth-child(1) {
+    margin-top: 5%;
+  }
+  
+  .task .task-content {
+    margin: 8px 8px 0 8px;
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: medium ;
+    line-height: 24px;
+    color: #54585A;
+  }
+  
+  .task:hover {
+    background: #FFFFFF;
+    border: 1px solid #4786FF;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px #4786FF;
+    border-radius: 2px;
+  }
+  
+  .task .trash {
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+    font-family: 'Lato';
+    color: #54585A;
+  }
+  
+  .task .trash:hover {
+    color: #c42d1c;
+  }
+
+
+  .hold:active:hover {
+    border: solid 3px blue;
+  }
+  .hovered {
+    border-style: dashed;
+  }
+  .invisible {
+    display: none;
+  }
+
+  .task.dragging{
+    transform: scaleY(0.5);
+    transform: scaleX(0.9);  
+  }
+  

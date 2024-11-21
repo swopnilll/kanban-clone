@@ -1,0 +1,264 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 3px;
+    z-index: 10;
+    background-color: white;
+    width: 700px;
+    max-width: 80%;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px 0px;
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+    .modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    position: relative; 
+  }
+
+   .title {
+    font-size: 21px;
+    font-weight: bold;
+  }
+
+  .title.active{
+    display: none;
+  }
+  
+  .issue-info{
+    font-size: 21px;
+    font-weight: bold;
+    display: none;
+  }
+  .issue-info.active{
+    display: block;
+  }
+  
+   .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    float: right;
+  }
+  
+  
+  .modal-body {
+    padding: 25px 40px 35px;
+  }
+  
+  .modal-body select{
+    width: 100%;
+    border: 1px solid #777;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  }
+
+.summary-input{
+    width: 100%;
+    outline: none;
+    min-height: 40px;
+    font-style: oblique;
+    border: 1px solid #777;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    background-color: #fff;
+   
+  }
+
+
+.description-textarea{
+    width: 100%;
+    outline: none;
+    min-height: 60px;
+    padding: 1%;
+    font-style: oblique;
+
+    border: 1px solid #777;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    background-color: #fff;
+   
+
+}
+
+.submit-issue{
+    text-align: center;
+}
+.issue-submit{
+  height: 30px;
+  width: 60px;
+  height: 32px;
+  padding: 5px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14.5px;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 82, 204);
+  font-weight: normal;
+}
+
+.issue-submit.deactive{
+  display: none;
+}
+
+
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+  
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .issue-type{
+    font-size: large;
+  }
+
+  #issue-type-select{
+    height: 45px;
+     font-family:Arial, FontAwesome;
+    
+
+  }
+  #prio-type-select{
+     height: 45px;
+     font-family:Arial, FontAwesome;
+  }
+
+  .issueType {
+    height: 45px;
+    font-family:Arial, FontAwesome;
+    float: right;
+    padding: 2%;
+    font-size: 8px;
+   
+   }
+
+   .prio-type{
+     font-size: large;
+   }
+   .prio{
+    height: 45px;
+    font-family:Arial, FontAwesome;
+    padding: 2%;
+    font-size: 8px;
+    float: right;
+
+   }
+  .summary-header{
+    font-size: large;
+  }
+
+  .description-header{
+    font-size: large;
+  }
+
+
+
+   .issueId{
+    height: 45px;
+    font-family:Arial, FontAwesome;
+    padding: 2%;
+    font-size: 8px;
+    float: right;
+   }
+
+
+   .sign-up {
+     width: 80%;
+    
+   }
+
+
+  .edit-issue {
+    height: 30px;
+    width: 50px;
+    height: 32px;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14.5px;
+    color: rgb(255, 255, 255);
+    background: rgb(0, 82, 204);
+    font-weight: normal;
+    display: none;
+}
+  .edit-issue.active{
+      display: block;
+      margin: 0 auto;
+    }
+
+
+    .delete-issue {
+    height: 30px;
+    width: 60px;
+    height: 32px;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14.5px;
+    color: rgb(255, 255, 255);
+    background: rgb(100, 123, 156);
+    font-weight: normal;
+    display: none;
+  }
+
+  .delete-issue.active{
+    display: block;
+    float: right;
+    margin-top: -25px;
+   
+  }
+
+  .alert {
+    width: 20%;
+    height: fit-content;
+    position: absolute;
+    left: 40%;
+    top: 100%;
+    padding: 2%;
+}
+
+.alert-danger{
+    background-color: red;
+}
+.alert-sucess{
+    background-color: aqua;
+}

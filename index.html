@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira Kanban clone - Swopnil</title>
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/popup.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+    <aside>
+        <nav>
+            <embed src="./icons/logo.svg">
+                <br>
+                <button data-modal-target="#modal" class = "create-issue">Create Issue</button>
+        </nav>
+
+        <div id="mid-side-panel">
+            <embed src="./icons/project.svg" width="40px" style="display: inline;">
+            <span> Internship</span>
+            <br><br>
+            <span class="mid-side-button" selected="true"> <span class="board-icon"></span>  Kanban Board </span>
+            <span class="mid-side-button"> <span class="settings-icon"></span>  Project Settings </span>
+            <hr>
+            <span class="mid-side-button notimplemented"> <span class="notimplemented-icon"></span>  Some Feature </span>
+            <span class="mid-side-button notimplemented"> <span class="notimplemented-icon"></span>  Some Feature </span>
+            <span class="mid-side-button notimplemented"> <span class="notimplemented-icon"></span>  Some Feature </span>
+            <span class="mid-side-button notimplemented"> <span class="notimplemented-icon"></span>  Some Feature </span>
+        </div>
+    </aside>
+
+    <section class = "issue-pops">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+              <div class="title">Create Issue</div>
+              <div class="issue-info">Issue Summary</div>
+              <button data-close-button class="close-button active">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class = 'create-issue-form' id ='create-issue-form'>
+                    <input type="hidden" id="custId" name="custId" >
+                    <div class="issue-type-container" >
+                        <p class="issue-type">Issue Type : </p>
+                         <br> 
+                                <select id = "issue-type-select" name='state'>
+                                <option  style='color:green;'>&#xf00c; &nbsp; Task</option>
+                                <option  style='color:orange;'>&#xf04c; &nbsp; Issue</option>
+                                <option  style='color:blue ;'>&#xf21d; &nbsp; Story</option>
+                                </select>      
+                    </div>
+                    <br>
+                    <div class="prio-type-container">
+                        <p class="prio-type">Priority : </p>
+                        <br>
+                                <select id = "prio-type-select" name='state'>
+                                <option  style='color:black;'>&#xf063; &nbsp; Low</option>
+                                <option  style='color:orange;'>&#xf061; &nbsp; Medium</option>
+                                <option  style='color:green ;'>&#xf062; &nbsp; High</option>
+                                </select>           
+                    </div>
+                    <br>
+                    <div class="summary-container">
+                        <p class="summary-header">Summary of the issue:</p>
+                        <br>
+                        <input class="summary-input" placeholder="Summary of the issue.">
+                    </div>
+                    <br>
+
+                    <div class="description-container">
+                        <p class="description-header">Description of the issue:</p>
+                        <br>
+                        <textarea  class="description-textarea" placeholder="Description of the issue."></textarea>
+                    </div>
+                    <br>
+
+                    <div class="reporter-container">
+                        <p class="reporter-header">Reporter : </p>
+                        <br>
+                            <select class = "repo-select">
+                                <option>Swopnil</option>
+                                <option>Prashant</option>
+                                <option>Helmet </option>
+                            </select>       
+                    </div>
+                    <br>
+
+                    <div class="assigne-container">
+                        <p class="assigne-header">Assigne : </p>
+                        <br>
+                            <select class = "assigne-select">
+                                <option>Swopnil</option>
+                                <option>Prashant</option>
+                                <option>Helmet </option>
+                            </select>       
+                    </div>
+                    <br>
+
+                    <div class="submit-issue ">
+                        <button class = "issue-submit" id = "issue-submit">Create</button>  
+                    </div>
+
+                    <div class="edit-issue">
+                       <a class = "edit">Save</a>
+                    </div> 
+
+                    <div class="delete-issue ">
+                        <a class = "issue-delete">Delete</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="overlay"></div>  
+    </section>
+
+    <main>
+           <div class="main-container">
+                <div id="topbar">
+                    <span> Projects / Internship / Kanban</span><br>
+                    <span class="topbar-title"> Kanban Board </span>
+                </div>
+                <div class="boards">  
+                    <div class="column dropzone">
+                        <h3 class="column-title">Backlog</h3>
+                            <ul class="tasks dragdrop" id="tasks-added">
+                            </ul>
+                    </div>
+                    <div class="column dropzone">  
+                        <h3 class="column-title">Selected for Development</h3>
+                        <ul class="tasks dragdrop" id="tasks-added">
+                        </ul>
+                    </div>
+                    <div class="column dropzone">   
+                        <h3 class="column-title">In Progress</h3>
+                        <ul class="tasks dragdrop" id="tasks-added">
+                        </ul>
+                    </div>
+                    <div class="column dropzone">
+                        <h3 class="column-title">Done</h3>
+                        <ul class="tasks dragdrop" id="tasks-added">
+                        </ul>
+                    </div>
+                </div>  
+            </div>
+    </main>
+   
+<script src="scripts/ui.js"></script>
+<script src="scripts/storage.js"></script>
+<script src="scripts/event.js"></script>  
+</body>
+</html>
